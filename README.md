@@ -12,7 +12,7 @@ For an organization having large amounts of data stored in multiple databases se
 
 This project presents a small ETL setup where the data stored in the form of .csv files is loaded into memory(i.e, extracted), then some transformations are performed on this data to extract some valuable information, and finally, it is loaded into a separate MySQL database. 
 
-Note: It is also possible to extract data from a database, then temperarily store into a separate database(data warehouse) while performing transformations, then finally the data can be loaded back into the database where it came from. This is what happens in an actual production environment.
+**Note:** It is also possible to extract data from a database, then temperarily store into a separate database(data warehouse) while performing transformations, then finally the data can be loaded back into the database where it came from. This is what happens in an actual production environment.
 
 The dataset being used is the "Crypocurrency Historical Prices" dataset from Kaggle.
 Link to the dataset: https://www.kaggle.com/datasets/sudalairajkumar/cryptocurrencypricehistory
@@ -28,8 +28,8 @@ We are going to extract useful information from the dataset like:
 
 All this data will be stored in the MySQL database and can be accessed anytime through the MySQL CLI.
 
-### Structure of the project:
-#### 1) Scripts->
+### Structure of the project(POV: root directory):
+#### 1) Scripts-> This folder contains the python code for the project.
 > driver.py: This is the main code which calls different components with the data provided by the user.
 >
 > extractor.py: This code is used for extracting the text file from memory(from a user-given file name and directory) and loading it into a python variable.
@@ -41,13 +41,21 @@ All this data will be stored in the MySQL database and can be accessed anytime t
 > 
 > unit_testing.py: Executed by the unit_testing.bat for entering into the console application for unit testing purposes(explained later in detail).
 
-#### 2) Input->
+#### 2) SQLqueries-> This folder contains the sql queries stored in the form of .sql files. A total of 4 files whose details are described below:
+>  cryptoTableCreation.sql: By running this SQL query, we can create the "cryptos" table structure which will later store all the crypo names.
+>
+> cryptoTableFilling.sql: This query fills up the previously created table "cryptos" with the crypto names.
+>
+> otherTableCreation.sql: This query is used for creating other two tables "max_price"(stores the maximum closing prices for each of the crypto over this entire period) and "growth_rates"(stores the latest annual growth rates of each of the crypto).
+> 
+> individualGrowthRateTablesCreation.sql: This query is used for creating the tables for storing the YOY growth rate for each of the cryptos over the entire time period of observation.
+#### 3) Input->
 > This folder is the default path for all the input files, although the user can provide a separate path as well in the console application.
-#### 3) WrongInput->
+#### 4) WrongInput->
 > This folder is a copy of the input folder, but with some of the files missing. It has been created for demonstration purposes of unit testing.
-#### 4) requirements.txt->
+#### 5) requirements.txt->
 > This file contains all the dependencies necessary for running the code.
-#### 5) pretesting.bat, unit_testing.bat and table_creation.bat files->
+#### 6) pretesting.bat, unit_testing.bat and table_creation.bat files->
 > For testing the ETL system in console environment. With the use of these batch files, I tried to automate the process of code execution in the desired order without the need to run the python files separately. Use of batch files makes the user experience much easier. Explained in detail later.
 
 ### For testing our ETL system, I have created two batch files:
