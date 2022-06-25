@@ -58,6 +58,34 @@ All this data will be stored in the MySQL database and can be accessed anytime t
 
 **6) pretesting.bat, unit_testing.bat and table_creation.bat files->** For testing the ETL system in console environment. With the use of these batch files, I tried to automate the process of code execution in the desired order without the need to run the python files separately. Use of batch files makes the user experience much easier. Explained in detail later.
 
+
+
+### How to run the code?
+
+There are basically two things this code is capable of - ETL Testing which is the main operation, along with Unit-Testing which is basically the troubleshooting operation.
+
+Before any of the operations, the first thing is to set-up the database and create the necessary tables.
+For this purpose, run the table_creation.bat file(by double clicking it). The command terminal will open up which will prompt the user to enter hostname, username, and password. If all the details are correct, we enter into the MySQL shell and here we can execute MySQL queries.
+![image](https://user-images.githubusercontent.com/56553419/175784465-5b969f1c-a6ac-492a-a730-dd5ea16f3fa9.png)
+Note: For correct execution, MySQL Server 8.0 or above must be installed and its path must be present in the system 'PATH' variable.
+
+Once, we have entered into the MySQL shell, enter the following commands:
+![image](https://user-images.githubusercontent.com/56553419/175784634-6d37e9f4-39fd-4ca4-a2fb-59818dda45f0.png)
+![image](https://user-images.githubusercontent.com/56553419/175784652-c79f1042-36d7-4d51-8e57-a0bb8a051dcb.png)
+
+By now, all these tables would be present in your database:
+![image](https://user-images.githubusercontent.com/56553419/175784737-0f9b8b1f-ca21-4265-a090-00c743cb305e.png)
+And the "cryptos" table will be populated. (All other tables would be populated after transformation is done!)
+![image](https://user-images.githubusercontent.com/56553419/175784788-8cfd87c5-b3f1-4b61-8084-f1fd8bfc43ed.png)
+
+
+**The first is the ETL testing. (main operation)**
+In this operation, we extract data from 
+
+
+
+
+
 ### For testing our ETL system, I have created two batch files:
 #### 1) manual_testing.bat-> 
 > By running this batch code, the user gets into the console application of the software, where he/she can follow the instructions and perform the transformations of the user given text file. 
