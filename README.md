@@ -49,14 +49,10 @@ All this data will be stored in the MySQL database and can be accessed anytime t
 > otherTableCreation.sql: This query is used for creating other two tables "max_price"(stores the maximum closing prices for each of the crypto over this entire period) and "growth_rates"(stores the latest annual growth rates of each of the crypto).
 > 
 > individualGrowthRateTablesCreation.sql: This query is used for creating the tables for storing the YOY growth rate for each of the cryptos over the entire time period of observation.
-#### 3) Input->
-> This folder is the default path for all the input files, although the user can provide a separate path as well in the console application.
-#### 4) WrongInput->
-> This folder is a copy of the input folder, but with some of the files missing. It has been created for demonstration purposes of unit testing.
-#### 5) requirements.txt->
-> This file contains all the dependencies necessary for running the code.
-#### 6) pretesting.bat, unit_testing.bat and table_creation.bat files->
-> For testing the ETL system in console environment. With the use of these batch files, I tried to automate the process of code execution in the desired order without the need to run the python files separately. Use of batch files makes the user experience much easier. Explained in detail later.
+#### 3) Input-> This folder is the default path for all the input files, although the user can provide a separate path as well in the console application.
+#### 4) WrongInput-> This folder is a copy of the input folder, but with some of the files missing. It has been created for demonstration purposes of unit testing.
+#### 5) requirements.txt-> This file contains all the dependencies necessary for running the code.
+#### 6) pretesting.bat, unit_testing.bat and table_creation.bat files-> For testing the ETL system in console environment. With the use of these batch files, I tried to automate the process of code execution in the desired order without the need to run the python files separately. Use of batch files makes the user experience much easier. Explained in detail later.
 
 ### For testing our ETL system, I have created two batch files:
 #### 1) manual_testing.bat-> 
