@@ -74,6 +74,7 @@ Once, we have entered into the MySQL shell, enter the following commands:
 ![image](https://user-images.githubusercontent.com/56553419/175784652-c79f1042-36d7-4d51-8e57-a0bb8a051dcb.png)
 
 By now, all these tables would be present in your database:
+
 ![image](https://user-images.githubusercontent.com/56553419/175784737-0f9b8b1f-ca21-4265-a090-00c743cb305e.png)
 
 And the "cryptos" table will be populated. (All other tables would be populated after transformation is done!)
