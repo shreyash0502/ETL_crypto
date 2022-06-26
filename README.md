@@ -105,6 +105,7 @@ Now activate this virtual environment and install the dependencies.
 Now begin with the operations.
 
 **The first is the ETL testing. (main operation)**
+
 In this operation, we extract data from the 23 .csv files (Dataset) and then store the valuable information from it into the previously created tables.
 Just run the pretesting.bat file(root directory).
 Press any key and it will perform the testing operations(by calling driver.py file internally).
@@ -118,8 +119,18 @@ The pretesting has been completed and all the previous tables have been filled. 
 
 
 **The second operation is unit-testing. (troubleshooting operation)**
+
 In this operation, we check the individual components of the project and see if they are working fine.
-Just run the unit_testing.bat file and follow the instructions.
+Just run the unit_testing.bat file(root directory) and follow the instructions.
+
+![image](https://user-images.githubusercontent.com/56553419/175799639-a3ba0eff-f85f-4674-95d9-a6bacab29a6f.png)
+
+Here, we can see that extractor works fine as long as we give the correct folder name "Input" as it has all the 23 .csv files. But, when we give the incorrect folder name or the folder "WrongInput" (which has only 20 .csv files), an _error_ is shown. 
+
+The loader is also working fine as seen in the above image. To confirm it, we can see the "logs" table in "etlproject" database in our MySQL CLI to check the last access time which is same as the last time loader worked fine. Check image below -->
+
+![image](https://user-images.githubusercontent.com/56553419/175799735-c21ed384-c81a-4312-b83a-75e7bd923328.png)
+
 
 ### Salient features of this ETL system:
 > Adding new transformations is very easy. Just need to give the user a choice, write code for transformation in a separate .py file and call that transformation based on choice, through the driver code. 
