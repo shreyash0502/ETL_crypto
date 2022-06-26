@@ -41,7 +41,7 @@ All this data will be stored in the MySQL database and can be accessed anytime t
 > 
 > unit_testing.py: Executed by the unit_testing.bat for entering into the console application for unit testing purposes(explained later in detail).
 >
-> config.py: contains the host, user and password necessary for database connection. (USER MUST UPDATE THIS INFORMATION WITH THEIR DETAILS).
+> config.py: contains the host, user and password necessary for database connection.
 
 #### 2) SQLqueries-> This folder contains the sql queries stored in the form of .sql files. A total of 4 files whose details are described below:
 >  cryptoTableCreation.sql: By running this SQL query, we can create the "cryptos" table structure which will later store all the crypo names.
@@ -68,6 +68,7 @@ There are basically two things this code is capable of - ETL Testing which is th
 
 Before any of the operations, the first thing is to set-up the database and create the necessary tables.
 For this purpose, run the table_creation.bat file(by double clicking it). The command terminal will open up which will prompt the user to enter hostname, username, and password(password will be asked twice for safety). If all the details are correct, we enter into the MySQL shell and here we can execute MySQL queries.
+Note: "config.py" file gets updated automatically for storing the current user's inputs for host, user and password, when we run the table_creation.bat file.
 
 ![image](https://user-images.githubusercontent.com/56553419/175799402-60305a84-0048-495e-a27f-ea83ba9b4a9d.png)
 
@@ -92,6 +93,16 @@ After this, just do 'exit' to get out of CLI.
 
 
 Now that you have created the tables, you can begin with testing.
+
+Firstly, create a virtual environment in the root directory.
+
+![image](https://user-images.githubusercontent.com/56553419/175799504-4fc5c70d-a2f6-4477-a49a-314be227441f.png)
+Note: Keep the name "myvenv" itself.
+Now activate this virtual environment and install the dependencies.
+
+![image](https://user-images.githubusercontent.com/56553419/175799525-d7d8d0c1-36a0-4a98-ac57-464274d4f2d0.png)
+
+Now begin with the operations.
 
 **The first is the ETL testing. (main operation)**
 In this operation, we extract data from the 23 .csv files (Dataset) and then store the valuable information from it into the previously created tables.
