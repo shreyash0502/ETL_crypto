@@ -40,6 +40,8 @@ All this data will be stored in the MySQL database and can be accessed anytime t
 > pretests.py: Executed by the pretesting.bat file for automatic testing purposes(explained later in detail).
 > 
 > unit_testing.py: Executed by the unit_testing.bat for entering into the console application for unit testing purposes(explained later in detail).
+>
+> config.py: contains the host, user and password necessary for database connection. (USER MUST UPDATE THIS INFORMATION WITH THEIR DETAILS).
 
 #### 2) SQLqueries-> This folder contains the sql queries stored in the form of .sql files. A total of 4 files whose details are described below:
 >  cryptoTableCreation.sql: By running this SQL query, we can create the "cryptos" table structure which will later store all the crypo names.
@@ -81,6 +83,7 @@ And the "cryptos" table will be populated. (All other tables would be populated 
 ![image](https://user-images.githubusercontent.com/56553419/175784788-8cfd87c5-b3f1-4b61-8084-f1fd8bfc43ed.png)
 
 After this, just do 'exit' to get out of CLI.
+
 ![image](https://user-images.githubusercontent.com/56553419/175798287-b2f51ec6-9688-464d-9758-4e0ded8f7acf.png)
 
 
@@ -96,8 +99,9 @@ The pretesting has been completed and all the previous tables have been filled. 
 ![image](https://user-images.githubusercontent.com/56553419/175798428-73287c51-9b19-4a88-aa3f-fdbb0527e03d.png)
 
 
-
-
+**The second operation is unit-testing. (troubleshooting operation)**
+In this operation, we check the individual components of the project and see if they are working fine.
+Just run the unit_testing.bat file and follow the instructions.
 
 
 ### For testing our ETL system, I have created two batch files:
