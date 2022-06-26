@@ -80,9 +80,21 @@ By now, all these tables would be present in your database:
 And the "cryptos" table will be populated. (All other tables would be populated after transformation is done!)
 ![image](https://user-images.githubusercontent.com/56553419/175784788-8cfd87c5-b3f1-4b61-8084-f1fd8bfc43ed.png)
 
+After this, just do 'exit' to get out of CLI.
+![image](https://user-images.githubusercontent.com/56553419/175798287-b2f51ec6-9688-464d-9758-4e0ded8f7acf.png)
+
+
+Now that you have created the tables, you can begin with testing.
 
 **The first is the ETL testing. (main operation)**
-In this operation, we extract data from 
+In this operation, we extract data from the 23 .csv files (Dataset) and then store the valuable information from it into the previously created tables.
+Just run the pretesting.bat file(root directory).
+Press any key and it will perform the testing operations(by calling driver.py file internally).
+![image](https://user-images.githubusercontent.com/56553419/175798342-a765177f-b689-4151-b974-dae63bd9d535.png)
+![image](https://user-images.githubusercontent.com/56553419/175798349-8010ac74-50bb-4679-b673-21c12e6de37a.png)
+The pretesting has been completed and all the previous tables have been filled. You can check them in the MySQL CLI like: 
+![image](https://user-images.githubusercontent.com/56553419/175798428-73287c51-9b19-4a88-aa3f-fdbb0527e03d.png)
+
 
 
 
