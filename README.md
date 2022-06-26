@@ -22,35 +22,27 @@ The dataset consists of the price history of 23 most popular cryto currencies, s
 The dataset contains the opening, closing, low, high prices along with transaction volumes and market cap, for every date(within the previously specified period), for each of the 23 cryptos.
 
 We are going to extract useful information from the dataset like:
-> Maximum Closing Prices
-> Latest Annual Growth Rates. 
-> Individual crypto currencies YOY growth rates.
+* Maximum Closing Prices
+* Latest Annual Growth Rates. 
+* Individual crypto currencies YOY growth rates.
 
 All this data will be stored in the MySQL database and can be accessed anytime through the MySQL CLI.
 
 ### Structure of the project(POV: root directory):
 #### 1) Scripts-> This folder contains the python code for the project.
-> driver.py: This is the main code which calls different components with the data provided by the user.
->
-> extractor.py: This code is used for extracting the text file from memory(from a user-given file name and directory) and loading it into a python variable.
-> 
-> loader.py: This code is used for loading the final output of the transformation into a text file with a user-given name and directory.
->
-> 
-> pretests.py: Executed by the pretesting.bat file for automatic testing purposes(explained later in detail).
-> 
-> unit_testing.py: Executed by the unit_testing.bat for entering into the console application for unit testing purposes(explained later in detail).
->
-> config.py: contains the host, user and password necessary for database connection.
+* driver.py: This is the main code which calls different components with the data provided by the user.
+* extractor.py: This code is used for extracting the text file from memory(from a user-given file name and directory) and loading it into a python variable.
+* loader.py: This code is used for loading the final output of the transformation into a text file with a user-given name and directory.
+* pretests.py: Executed by the pretesting.bat file for automatic testing purposes(explained later in detail).
+* unit_testing.py: Executed by the unit_testing.bat for entering into the console application for unit testing purposes(explained later in detail).
+* config.py: contains the host, user and password necessary for database connection.
+* connection.py: contains the code for completing the connection.bat file. Called by table_creation.bat file.
 
 #### 2) SQLqueries-> This folder contains the sql queries stored in the form of .sql files. A total of 4 files whose details are described below:
->  cryptoTableCreation.sql: By running this SQL query, we can create the "cryptos" table structure which will later store all the crypo names.
->
-> cryptoTableFilling.sql: This query fills up the previously created table "cryptos" with the crypto names.
->
-> otherTableCreation.sql: This query is used for creating other two tables "max_price"(stores the maximum closing prices for each of the crypto over this entire period) and "growth_rates"(stores the latest annual growth rates of each of the crypto).
-> 
-> individualGrowthRateTablesCreation.sql: This query is used for creating the tables for storing the YOY growth rate for each of the cryptos over the entire time period of observation.
+* cryptoTableCreation.sql: By running this SQL query, we can create the "cryptos" table structure which will later store all the crypo names.
+* cryptoTableFilling.sql: This query fills up the previously created table "cryptos" with the crypto names.
+* otherTableCreation.sql: This query is used for creating other two tables "max_price"(stores the maximum closing prices for each of the crypto over this entire period) and "growth_rates"(stores the latest annual growth rates of each of the crypto).
+* individualGrowthRateTablesCreation.sql: This query is used for creating the tables for storing the YOY growth rate for each of the cryptos over the entire time period of observation.
 
 **3) Input->** This folder is the default path for all the input files, although the user can provide a separate path as well in the console application.
 
@@ -97,6 +89,7 @@ Now that you have created the tables, you can begin with testing.
 Firstly, create a virtual environment in the root directory.
 
 ![image](https://user-images.githubusercontent.com/56553419/175799504-4fc5c70d-a2f6-4477-a49a-314be227441f.png)
+
 Note: Keep the name "myvenv" itself.
 Now activate this virtual environment and install the dependencies.
 
