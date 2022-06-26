@@ -67,11 +67,14 @@ All this data will be stored in the MySQL database and can be accessed anytime t
 There are basically two things this code is capable of - ETL Testing which is the main operation, along with Unit-Testing which is basically the troubleshooting operation.
 
 Before any of the operations, the first thing is to set-up the database and create the necessary tables.
-For this purpose, run the table_creation.bat file(by double clicking it). The command terminal will open up which will prompt the user to enter hostname, username, and password. If all the details are correct, we enter into the MySQL shell and here we can execute MySQL queries.
-![image](https://user-images.githubusercontent.com/56553419/175784465-5b969f1c-a6ac-492a-a730-dd5ea16f3fa9.png)
+For this purpose, run the table_creation.bat file(by double clicking it). The command terminal will open up which will prompt the user to enter hostname, username, and password(password will be asked twice for safety). If all the details are correct, we enter into the MySQL shell and here we can execute MySQL queries.
+
+![image](https://user-images.githubusercontent.com/56553419/175799402-60305a84-0048-495e-a27f-ea83ba9b4a9d.png)
+
 Note: For correct execution, MySQL Server 8.0 or above must be installed and its path must be present in the system 'PATH' variable.
 
 Once, we have entered into the MySQL shell, enter the following commands:
+
 ![image](https://user-images.githubusercontent.com/56553419/175784634-6d37e9f4-39fd-4ca4-a2fb-59818dda45f0.png)
 ![image](https://user-images.githubusercontent.com/56553419/175784652-c79f1042-36d7-4d51-8e57-a0bb8a051dcb.png)
 
@@ -80,6 +83,7 @@ By now, all these tables would be present in your database:
 ![image](https://user-images.githubusercontent.com/56553419/175784737-0f9b8b1f-ca21-4265-a090-00c743cb305e.png)
 
 And the "cryptos" table will be populated. (All other tables would be populated after transformation is done!)
+
 ![image](https://user-images.githubusercontent.com/56553419/175784788-8cfd87c5-b3f1-4b61-8084-f1fd8bfc43ed.png)
 
 After this, just do 'exit' to get out of CLI.
@@ -93,24 +97,18 @@ Now that you have created the tables, you can begin with testing.
 In this operation, we extract data from the 23 .csv files (Dataset) and then store the valuable information from it into the previously created tables.
 Just run the pretesting.bat file(root directory).
 Press any key and it will perform the testing operations(by calling driver.py file internally).
+
 ![image](https://user-images.githubusercontent.com/56553419/175798342-a765177f-b689-4151-b974-dae63bd9d535.png)
 ![image](https://user-images.githubusercontent.com/56553419/175798349-8010ac74-50bb-4679-b673-21c12e6de37a.png)
+
 The pretesting has been completed and all the previous tables have been filled. You can check them in the MySQL CLI like: 
+
 ![image](https://user-images.githubusercontent.com/56553419/175798428-73287c51-9b19-4a88-aa3f-fdbb0527e03d.png)
 
 
 **The second operation is unit-testing. (troubleshooting operation)**
 In this operation, we check the individual components of the project and see if they are working fine.
 Just run the unit_testing.bat file and follow the instructions.
-
-
-### For testing our ETL system, I have created two batch files:
-#### 1) manual_testing.bat-> 
-> By running this batch code, the user gets into the console application of the software, where he/she can follow the instructions and perform the transformations of the user given text file. 
-#### 2) pretesting.bat->
-> This is the automatic testing batch code. By running this batch code, the pretesting input files present in the "Input/" directory are transformed to output files stored in the "Output/" directory.
-#### 3) unit_testing.bat->
-> This is the batch code for unit testing, here we test the extractor, loader and the two transformations individually. Using this, we can identify which component has a bug if we make any changes in code in future. The files input/output for this code are stored in UnitTests/ directory.
 
 ### Salient features of this ETL system:
 > Adding new transformations is very easy. Just need to give the user a choice, write code for transformation in a separate .py file and call that transformation based on choice, through the driver code. 
