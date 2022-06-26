@@ -1,4 +1,3 @@
-use etlproject;
 insert into cryptos values (1, 'Aave');
 insert into cryptos values (2, 'BinanceCoin');
 insert into cryptos values (3, 'Bitcoin');

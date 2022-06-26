@@ -1,5 +1,3 @@
-use etlproject;
-
 create table max_price (
 	CryptoName varchar(20) NOT NULL,
 	MaxClose double,

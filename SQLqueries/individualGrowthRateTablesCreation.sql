@@ -1,8 +1,8 @@
-use etlproject;
-
 delimiter //
 
-CREATE procedure for_loop_example()
+DROP PROCEDURE IF EXISTS for_loop;
+
+CREATE procedure for_loop()
 wholeblock:BEGIN
   DECLARE x INT;
   SET x = 1;
@@ -21,4 +21,6 @@ wholeblock:BEGIN
   END LOOP;
 
 END//
-call for_loop_example();
+
+delimiter ;
+call for_loop();
