@@ -134,10 +134,7 @@ The loader is also working fine as seen in the above image. To confirm it, we ca
 With this, we have completed testing. Now lets look at some salient features of this ETL system.
 
 ### Salient features of this ETL system:
-> Adding new transformations is very easy. Just need to give the user a choice(to choose which transformation the user wants to perform), write code for transformation in the driver.py file(between extractor and loader) and call that transformation based on choice, through the driver code. 
->
-> Since we have separate .py file for extracting and loading the data to/from a file from/to a python variable, we can easily exchange this dataset with some other dataset(or switch database as well) or some other format(like text, csv) if required in future.
-> 
-> If you are using Text/CSV instead of SQL database : Only the extractor/loader .py files need to be changed and all other things remain same.
->
->If using some other database(Like PostgreSQL) : Only the connection.py file needs to be changed.
+* Adding new transformations is very easy. Just need to give the user a choice(to choose which transformation the user wants to perform), write code for transformation in the driver.py file(between extractor and loader) and call that transformation based on choice, through the driver code. 
+* Since we have separate .py file for extracting and loading the data to/from a file from/to a python variable, we can easily exchange this dataset with some other dataset(or switch database as well) or some other format(like text, csv) if required in future.
+  * If you are using Text/CSV instead of SQL database : Only the extractor/loader .py files need to be changed and all other things remain same.
+  * If using some other database(Like PostgreSQL) : Only the connection.py file needs to be changed.
