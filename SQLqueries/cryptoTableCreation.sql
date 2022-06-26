@@ -1,3 +1,5 @@
+drop database if exists etlproject;
+
 create database etlproject;
 
 use etlproject;

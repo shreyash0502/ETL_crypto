@@ -11,6 +11,8 @@ pymysql.install_as_MySQLdb()
 def unit_test_extractor():
     try:
         inp = extractor(inpdir)
+    except OSError:
+        print("No such file or directory exists! or the directory misses one or more of the 23 .csv files.")
     except (Exception,):
         print("Extractor isn't working fine! Debugging necessary.")
     else:
@@ -39,12 +41,17 @@ while True:
     elif ans == "yes":
         while True:
             print("Which component you want to test? Enter 1 for extractor, 2 for loader.")
-            choice = int(input())
-            if choice not in (1, 2, 3, 4):
+            choice = input()
+            if choice.isdigit():
+                choice = int(choice)
+                if choice not in (1, 2):
+                    print('Please enter your choice correctly!')
+                    continue
+                else:
+                    break
+            else:
                 print('Please enter your choice correctly!')
                 continue
-            else:
-                break
         if choice == 1:
             print("Enter the input file directory(relative path only): (It must contain data for all 23 cryptos to work"
                   " properly) ")
